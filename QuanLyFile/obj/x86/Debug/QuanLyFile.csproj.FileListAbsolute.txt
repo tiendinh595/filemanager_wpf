@@ -1,0 +1,13 @@
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\bin\Debug\QuanLyFile.exe
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\bin\Debug\QuanLyFile.pdb
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile_MarkupCompile.cache
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.g.resources
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.exe
+C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.pdb
