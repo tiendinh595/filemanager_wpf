@@ -1,14 +1,14 @@
 ﻿<Window x:Class="QuanLyFile.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="450" Width="300">
+        Title="MainWindow" Height="450" Width="300" Loaded="Window_Loaded">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <ComboBox Width="248"></ComboBox>
+            <ComboBox Name="cmbDisk" Width="248"></ComboBox>
             <Image Source="Images/Up.png" Height="32"></Image>
         </StackPanel>
-        <StackPanel>
-            <ListBox>
+        <StackPanel>                                                                                                                                                                                                                                                                                                                                                                                                                           
+            <ListBox Name="lstListFile">
                 
             </ListBox>
         </StackPanel>
