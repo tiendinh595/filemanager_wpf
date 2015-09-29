@@ -12,7 +12,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-using System.Windows.Media;
 
 namespace QuanLyFile
 {
@@ -30,28 +29,76 @@ namespace QuanLyFile
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                drives = DriveInfo.GetDrives();
+                //foreach(string str in Directory.GetLogicalDrives())
+                foreach(DriveInfo item in drives)
+                {
+                    StackPanel stp = new StackPanel();
+                    stp.Orientation = Orientation.Horizontal;
+
+                    Image img = new Image();
+                    img.Source = new BitmapImage(new Uri("Images/Drive.png",UriKind.Relative));
+                    img.Width = img.Height = 16;
+
+                    stp.Children.Add(img);
+                    TextBlock text = new TextBlock();
+                    text.Text = item.Name;
+                    text.Margin = new Thickness(10, 0, 0, 0);
+
+                    stp.Children.Add(text);
+                    cmbDisk.Items.Add(stp);
+                }
+                cmbDisk.SelectedIndex = 1;
+                LoadContent(@"D:\", "Folder");
+                LoadContent(@"D:\", "File");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
-            drives = DriveInfo.GetDrives();
-            foreach(DriveInfo item in drives)
+        }
+
+
+        private string[] LoadSubDir(string dirName)
+        {
+            return Directory.GetDirectories(dirName);
+        }
+
+        private string[] LoadSubFiles(string dirName)
+        {
+            return Directory.GetFiles(dirName);
+        }
+
+
+        private void LoadContent(string dirName, string type)
+        {
+            string[] list;
+            if (type == "File")
+                list = LoadSubFiles(dirName);
+            else
+                list = LoadSubDir(dirName);
+
+            foreach (string fileName in list)
             {
                 StackPanel stp = new StackPanel();
                 stp.Orientation = Orientation.Horizontal;
 
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri("Images/Drive.png",UriKind.Relative));
+                img.Source = new BitmapImage(new Uri("Images/"+type+".png", UriKind.Relative));
                 img.Width = img.Height = 16;
 
                 stp.Children.Add(img);
                 TextBlock text = new TextBlock();
-                text.Text = item.Name;
+                text.Text = fileName;
                 text.Margin = new Thickness(10, 0, 0, 0);
 
                 stp.Children.Add(text);
-                cmbDisk.Items.Add(stp);
+                lstListFile.Items.Add(stp);
             }
-            cmbDisk.SelectedIndex = 0;
         }
-
 
     }
 }
