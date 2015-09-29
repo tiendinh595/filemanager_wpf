@@ -32,7 +32,7 @@ namespace QuanLyFile
             try
             {
                 drives = DriveInfo.GetDrives();
-                //foreach(string str in Directory.GetLogicalDrives())
+                //foreach(string str in Directory.GetLogicalDrives()){
                 foreach(DriveInfo item in drives)
                 {
                     StackPanel stp = new StackPanel();
@@ -50,9 +50,9 @@ namespace QuanLyFile
                     stp.Children.Add(text);
                     cmbDisk.Items.Add(stp);
                 }
-                cmbDisk.SelectedIndex = 1;
-                LoadContent(@"D:\", "Folder");
-                LoadContent(@"D:\", "File");
+                cmbDisk.SelectedIndex = 0;
+                LoadContent(@"C:\", "Folder");
+                LoadContent(@"C:\", "File");
             }
             catch (Exception ex)
             {
@@ -64,12 +64,20 @@ namespace QuanLyFile
 
         private string[] LoadSubDir(string dirName)
         {
-            return Directory.GetDirectories(dirName);
+            try
+            {
+                return Directory.GetDirectories(dirName);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); return null; }
         }
 
         private string[] LoadSubFiles(string dirName)
         {
-            return Directory.GetFiles(dirName);
+            try
+            {
+                return Directory.GetFiles(dirName);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); return null; }
         }
 
 
@@ -81,24 +89,54 @@ namespace QuanLyFile
             else
                 list = LoadSubDir(dirName);
 
-            foreach (string fileName in list)
+            if(list != null)
             {
-                StackPanel stp = new StackPanel();
-                stp.Orientation = Orientation.Horizontal;
+                foreach (string fileName in list)
+                {
+                    StackPanel stp = new StackPanel();
+                    stp.Orientation = Orientation.Horizontal;
 
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri("Images/"+type+".png", UriKind.Relative));
-                img.Width = img.Height = 16;
+                    Image img = new Image();
+                    img.Source = new BitmapImage(new Uri("Images/" + type + ".png", UriKind.Relative));
+                    img.Width = img.Height = 16;
 
-                stp.Children.Add(img);
-                TextBlock text = new TextBlock();
-                text.Text = fileName;
-                text.Margin = new Thickness(10, 0, 0, 0);
+                    stp.Children.Add(img);
+                    TextBlock text = new TextBlock();
+                    if (type == "File")
+                    {
+                        FileInfo fi = new FileInfo(fileName);
+                        text.Text = fi.Name;
+                    }
+                    else
+                    {
+                        DirectoryInfo fo = new DirectoryInfo(fileName);
+                        text.Text = fo.Name;
+                    }
+                    text.Margin = new Thickness(10, 0, 0, 0);
 
-                stp.Children.Add(text);
-                lstListFile.Items.Add(stp);
+                    stp.Children.Add(text);
+                    lstListFile.Items.Add(stp);
+                }
             }
         }
+
+        private void cmbDisk_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lstListFile.Items.Clear();
+            string strPath = ((TextBlock)((StackPanel)cmbDisk.SelectedItem).Children[1]).Text;
+            LoadContent(strPath, "Folder");
+            LoadContent(strPath, "File");
+        }
+
+        private void lstListFile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string dirPath = ((TextBlock)((StackPanel)cmbDisk.SelectedItem).Children[1]).Text;
+            string strPath = dirPath + ((TextBlock)((StackPanel)lstListFile.SelectedItem).Children[1]).Text;
+            lstListFile.Items.Clear();
+            LoadContent(strPath, "Folder");
+            LoadContent(strPath, "File");
+        }
+
 
     }
 }

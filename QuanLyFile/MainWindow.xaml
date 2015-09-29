@@ -4,13 +4,15 @@
         Title="MainWindow" Height="450" Width="300" Loaded="Window_Loaded">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <ComboBox Name="cmbDisk" Width="248"></ComboBox>
+            <ComboBox Name="cmbDisk" Width="248" SelectionChanged="cmbDisk_SelectionChanged"></ComboBox>
             <Image Source="Images/Up.png" Height="32"></Image>
-        </StackPanel>
-        <StackPanel>                                                                                                                                                                                                                                                                                                                                                                                                                           
-            <ListBox Name="lstListFile">
-                
-            </ListBox>
-        </StackPanel>
+        </StackPanel> 
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <ListBox Name="lstListFile" MouseDoubleClick="lstListFile_MouseDoubleClick">
+
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
     </StackPanel>
 </Window>

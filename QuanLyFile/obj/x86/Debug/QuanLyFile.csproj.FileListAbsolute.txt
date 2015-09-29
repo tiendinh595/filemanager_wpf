@@ -11,3 +11,15 @@ C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\De
 C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.exe
 C:\Documents and Settings\Administrator\Desktop\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.pdb
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.exe
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.pdb
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\bin\Debug\QuanLyFile.exe
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\bin\Debug\QuanLyFile.pdb
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.csprojResolveAssemblyReference.cache
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\MainWindow.baml
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\MainWindow.g.cs
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\App.g.cs
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile_MarkupCompile.cache
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.g.resources
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.Properties.Resources.resources
+E:\PROGRAMING\WPF\filemanager_wpf\QuanLyFile\obj\x86\Debug\QuanLyFile.csproj.GenerateResource.Cache
