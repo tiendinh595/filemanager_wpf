@@ -9,9 +9,7 @@
         </StackPanel> 
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <ListBox Name="lstListFile" MouseDoubleClick="lstListFile_MouseDoubleClick">
-
-                </ListBox>
+                <ListBox Name="lstListFile" MouseDoubleClick="lstListFile_MouseDoubleClick" />
             </StackPanel>
         </ScrollViewer>
     </StackPanel>

@@ -88,7 +88,7 @@ namespace QuanLyFile
                 list = LoadSubFiles(dirName);
             else
                 list = LoadSubDir(dirName);
-
+            string[] arrExt = {".png", ".jpg", ".jpeg"};
             if(list != null)
             {
                 foreach (string fileName in list)
@@ -97,8 +97,6 @@ namespace QuanLyFile
                     stp.Orientation = Orientation.Horizontal;
 
                     Image img = new Image();
-                    img.Source = new BitmapImage(new Uri("Images/" + type + ".png", UriKind.Relative));
-                    img.Width = img.Height = 16;
 
                     stp.Children.Add(img);
                     TextBlock text = new TextBlock();
@@ -106,12 +104,26 @@ namespace QuanLyFile
                     {
                         FileInfo fi = new FileInfo(fileName);
                         text.Text = fi.Name;
+                        if (Array.IndexOf(arrExt, fi.Extension.ToLower()) >= 0)
+                        {
+                            img.Source = new BitmapImage(new Uri(fi.FullName, UriKind.Absolute));
+                            img.Width = img.Height = 24;
+                        }
+                        else
+                        {
+                            img.Source = new BitmapImage(new Uri("Images/" + type + ".png", UriKind.Relative));
+                            img.Width = img.Height = 16;
+                        }
                     }
                     else
                     {
                         DirectoryInfo fo = new DirectoryInfo(fileName);
                         text.Text = fo.Name;
+                        img.Source = new BitmapImage(new Uri("Images/" + type + ".png", UriKind.Relative));
+                        img.Width = img.Height = 16;
                     }
+                    
+
                     text.Margin = new Thickness(10, 0, 0, 0);
 
                     stp.Children.Add(text);
